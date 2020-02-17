@@ -29,4 +29,6 @@ Azure 상단 메뉴바의 Cloud Shell ( >_ 표시 )을 실행합니다.
 그럼 장문의 SAS 토큰 문자열이 생성됩니다. 잘 기억해두세요.   
 
 ## Last Step. -Arduino To Azure Connection-
+azureIOT_Arduino.ino 파일을 다운로드받습니다.    
+다음 
 
