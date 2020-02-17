@@ -5,15 +5,20 @@
 WiFiSSLClient net;
 MQTTClient mqtt(1024);
 
-const char wifi_ssid[] = "WiFissid";
-const char wifi_password[] = "WiFipass";
 
-const char server[] = "--Hub--.azure-devices.net";
-const char clientId[] = "--Device--";
-const char username[] = "--Hub--.azure-devices.net/--Device--/?api-version=2018-06-30";
-const char password[] = "SAS Token";
+const char wifi_ssid[] = "DailyLab2";
+const char wifi_password[] = "DailyLab0525";
 
-String subTopic = "devices/--Device--/messages/devicebound/#";
+const char server[] = "MyFeeder.azure-devices.net";
+const char clientId[] = "Feeder1";
+const char username[] = "MyFeeder.azure-devices.net/Feeder1/?api-version=2018-06-30";
+const char password[] = "SharedAccessSignature sr=MyFeeder.azure-devices.net%2Fdevices%2FFeeder1&sig=2En%2Bu0GkTmcpLJjVsuT6rGsm7eDvdDYvO%2FRavGxvSic%3D&se=1643956343";
+
+// Azure IoT Hub MQTT topics
+// https://docs.microsoft.com/en-us/azure/iot-hub/iot-hub-mqtt-support#sending-device-to-cloud-messages
+String subTopic = "devices/Feeder1/messages/devicebound/#";
+
+int status = WL_IDLE_STATUS;
 
 void setup() {
   Serial.begin(9600);
