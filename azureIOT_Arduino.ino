@@ -8,14 +8,17 @@ MQTTClient mqtt(1024);
 const char wifi_ssid[] = "---";
 const char wifi_password[] = "---";
 
-const char server[] = "---IoTHubName---.azure-devices.net";
-const char clientId[] = "---DeviceName---";
-const char username[] = "---IoTHubName---.azure-devices.net/---DeviceName---/?api-version=2018-06-30";
+const char IoTHubName[] = "";
+const char DeviceName[] = "";
+
+const char server[] = IotHubName+".azure-devices.net";
+const char clientId[] = DeviceName;
+const char username[] = IotHubName+".azure-devices.net/"+DeviceName+"/?api-version=2018-06-30";
 const char password[] = "---SAS Token---";
 
 // Azure IoT Hub MQTT topics
 // https://docs.microsoft.com/en-us/azure/iot-hub/iot-hub-mqtt-support#sending-device-to-cloud-messages
-String subTopic = "devices/---DeviceName---/messages/devicebound/#";
+String subTopic = "devices/"+DeviceName+"/messages/devicebound/#";
 
 
 void setup() {
